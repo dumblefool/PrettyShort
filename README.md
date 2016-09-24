@@ -1,5 +1,5 @@
 # PrettyShort
-Summarizes the article/content 
+Summarizes the article/content by ranking the sentences of the content and displaying the most prominent ones. 
 
 Implemented using NLP and TFDIF.
 
