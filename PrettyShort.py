@@ -7,6 +7,7 @@ from nltk.tokenize.punkt import PunktSentenceTokenizer
 from sklearn.feature_extraction.text import TfidfTransformer,CountVectorizer
 import networkx
 import pyperclip
+import re
 
 def Summarize(data):
     data=' '.join(data.strip().split('\n'))
@@ -23,6 +24,8 @@ def Summarize(data):
                 print ordered[j][1]
 
 input=str(pyperclip.paste())
-Summarize(input)
-
+r1=re.sub(r'\bMr(?:\.|\b)',"Mr ",input)
+r2=re.sub(r'\bMrs(?:\.|\b)',"Mrs ",r1)
+r3=re.sub(r'\bDr(?:\.|\b)',"Dr ",r2)
+Summarize(r3)
 
