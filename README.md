@@ -11,5 +11,4 @@ scikit-learn ,
 nltk ,
 networkx ,
 pyperclip .
-
-TODO : Build a regular expressions based filter to eradicate the edge cases
+regular expressions (re)
