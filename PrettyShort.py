@@ -6,10 +6,9 @@ sys.setdefaultencoding('utf8')
 from nltk.tokenize.punkt import PunktSentenceTokenizer
 from sklearn.feature_extraction.text import TfidfTransformer,CountVectorizer
 import networkx
-import pyperclip
 import re
 from bs4 import BeautifulSoup
-import urllib2
+import requests
 
 def Summarize(data):
     data=' '.join(data.strip().split('\n'))
@@ -26,10 +25,10 @@ def Summarize(data):
                 print ordered[j][1]
 
 url=raw_input()
-page=urllib2.urlopen(url)
-soup=BeautifulSoup(page,"lxml")
-input=soup.find_all('p')
+soup=BeautifulSoup(requests.get(url).text,"lxml")
+page=max(soup.find_all(),key=lambda x:len(x.find_all('p',recursive=False)))
 data=u" "
+input=page.find_all('p')
 for p in input:
     data=data+p.text
 Summarize(data)
