@@ -3,16 +3,13 @@ Summarizes the article/content by ranking the sentences of the content and displ
 
 Implemented using NLP and TFDIF.
 
-From the website , just copy the url to the relevant article to the clipboard and run :
-python PrettyShort.py url
+Clone/Pull this repository and execute the following code.
+python run.py
 
 Dependencies:
 scikit-learn ,
 nltk ,
 networkx ,
-pyperclip .
-regular expressions (re)
+flask
 BeautifulSoup
-urllib2 
-
-#ToDo : Complete the flask web application
+requests
