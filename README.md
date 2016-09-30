@@ -10,6 +10,6 @@ Dependencies:
 scikit-learn ,
 nltk ,
 networkx ,
-flask
+flask ,
 BeautifulSoup
 requests
