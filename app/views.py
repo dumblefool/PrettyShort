@@ -5,5 +5,6 @@ import PrettyShort
 @app.route('/')
 @app.route('/index')
 def index():
-        output=PrettyShort.prest()
+        url=raw_input()
+        output=PrettyShort.prest(url)
         return render_template('index.html',output=output)
