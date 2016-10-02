@@ -25,9 +25,8 @@ def Summarize(data):
     for j in range(0,1):
                 return ordered[j][1]
 
-def prest():
+def prest(url):
     output=u" "
-    url="http://www.dailymail.co.uk/sport/football/article-3814060/Jurgen-Klopp-sets-standards-Liverpool-players-wake-Mamadou-Sakho-social-media-slip-up.html"
     soup=BeautifulSoup(requests.get(url).text,"lxml")
     page=max(soup.find_all(),key=lambda x:len(x.find_all('p',recursive=False)))
     data=u" "
